@@ -1,0 +1,30 @@
+<div class="form-froup row">
+
+    <label class="col-form-label" >Medicine Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="MedicineName" placeholder="Enter Medicine name">
+    </div>
+    <label class="col-form-label" >City</label>
+    <div class="col-sm-10"><input type="text" class="form-control" [(ngModel)]="City" placeholder="Enter City" >
+    <label class="col-form-label" >User Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="UserName" placeholder="Enter your name">
+    </div>
+    <label class="col-form-label" >Phone</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="PhoneNumber" placeholder="Enter your number">
+    </div>
+    <label class="col-form-label" >Information</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Information" placeholder="Some information about medicine,for example,price">
+    </div>
+    
+    
+    
+</div>
+<button (click)="addMed()" *ngIf="med.MedicineId==0" class="btn btn-primary">
+    Add
+</button>
+<button (click)="updateMed()" *ngIf="med.MedicineId!=0" class="btn btn-primary">
+    Update
+</button>

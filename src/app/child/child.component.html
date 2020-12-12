@@ -1,0 +1,63 @@
+<div>
+  <mat-card>
+    <mat-card-header class="example-button-container">
+      <h4> {{medicine.name}}</h4>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-raised-button *ngIf="isCollapsed" color="primary" (click)="toggleCollapse()">
+
+      </button>
+      <button mat-raised-button *ngIf="!isCollapsed" color="primary" (click)="toggleCollapse()">
+        <span>Collapse info</span>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div *ngIf="!isCollapsed" class="info-card">
+  <mat-card>
+    <mat-card-header class="example-button-container">
+      <h3 class="count-name"> {{medicine.name}} </h3>
+    </mat-card-header>
+    <mat-card-content>
+      
+      <p>Дополниельная информация: {{medicine.info}}</p><br>
+    </mat-card-content>
+    <img mat-card-image src="{{medicine.photo}}" class="flag">
+    <div class="buttons">
+      <button mat-raised-button *ngIf="isChangedName" (click)="toggleChangeName()">
+        <span>Имя страны</span>
+      </button>
+      <button mat-raised-button *ngIf="!isChangedName" (click)="toggleChangeName()">
+        <span>Скрыть форму(имя)</span>
+      </button>
+   
+      <button mat-raised-button *ngIf="!isChangedArea" (click)="toggleChangeArea()">
+        <span>Скрыть форму(площадь)</span>
+      </button>
+      <button mat-raised-button *ngIf="isChangedInfo" (click)="toggleChangeInfo()">
+        <span>Информация</span>
+      </button>
+      <button mat-raised-button *ngIf="!isChangedInfo" (click)="toggleChangeInfo()">
+        <span>Скрыть форму(информация)</span>
+      </button>
+    </div>
+    <br>
+    <div class="form">
+      <div *ngIf="!isChangedName">
+        <mat-form-field appearance="fill">
+          <mat-label>Country Name</mat-label>
+          <input matInput type="text" (keydown.enter)="sendName($event)" placeholder={{medicine.name}}>
+        </mat-form-field>
+      </div>
+      <div *ngIf="!isChangedInfo">
+        <mat-form-field appearance="fill">
+          <mat-label>Country Info</mat-label>
+          <textarea matInput type="text" (keydown.enter)="sendInfo($event)" placeholder="Print new information!"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+
+

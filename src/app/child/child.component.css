@@ -1,0 +1,44 @@
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+
+}
+h4{
+  font-family: "Bookman Old Style";
+  display: flex;
+  font-size: 35px;
+  margin-left: 400px;
+  margin-top: 20px;
+}
+mat-card{
+  width: 40%;
+  margin: 20px 0 10px 10px;
+  background-color: rgba(50, 115, 220, 0.3);
+}
+.count-name{
+  font-size: 30px;
+}
+.flag{
+  width: 200px;
+  height: 200px;
+  margin: 0 200px 20px 140px;
+}
+.info-card mat-card{
+  position: absolute;
+  top: 10%;
+  right: 6%;
+
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+span{
+  font-size: 13px;
+}
+
